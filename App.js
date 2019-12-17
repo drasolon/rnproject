@@ -1,51 +1,12 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
+import { createAppContainer } from 'react-navigation';
+import React, {Component} from 'react';
+import Rooter from './routes/index'
 
-import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  StatusBar,
-  FlatList
-} from 'react-native';
-import Post from './components/Post';
-import TopBar from './components/TopBar';
+const AppContainer = createAppContainer(Rooter);
 
-const DATA = [
-  {
-    id: "1",
-    content: "Post 1",
-  },
-  {
-    id: "2",
-    content: "Post 2",
-  },
-  {
-    id: "3",
-    content: "Post 3",
+export default class App extends Component {
+  render() {
+    return <AppContainer />;
   }
-];
+}
 
-const App = () => {
-  return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-          <TopBar></TopBar>
-          <FlatList
-            data={DATA}
-            renderItem={({ item }) => <Post content={item.content}/>}
-            keyExtractor={item => item.id}
-          />
-      </SafeAreaView>
-    </>
-  );
-};
-
-export default App;

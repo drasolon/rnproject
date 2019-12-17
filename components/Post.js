@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {
   View,
-  StyleSheet
+  StyleSheet,
+  TouchableOpacity
 } from 'react-native';
 import PostContent from './PostContent';
 import PostFooter from './PostFooter';
@@ -10,12 +11,16 @@ import theme from '../styles/theme.style';
 
 export default class Post extends Component {
   render() {
+    const { post, displayPost } = this.props
     return(
-      <View style={styles.post} >
+      <TouchableOpacity 
+        style={styles.post}
+        onPress={() => displayPost(post.id)}
+       >
         <PostHeader></PostHeader>
-        <PostContent content={this.props.content} />
+        <PostContent content={post.content} />
         <PostFooter></PostFooter>
-      </View>
+      </TouchableOpacity>
       )
   }
 }
