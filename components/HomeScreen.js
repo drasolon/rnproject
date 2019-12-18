@@ -7,7 +7,6 @@ import {
   FlatList,
 } from 'react-native';
 import Post from './Post';
-import TopBar from './TopBar';
 
 export default class HomeScreen extends Component {
   constructor(props) {
@@ -19,7 +18,6 @@ export default class HomeScreen extends Component {
     return fetch('http://reddit.it.ws312.net:3000/posts?fromApp=1')
       .then(response => response.json())
       .then(results => {
-        console.log(results);
         this.setState({
           isLoading: false,
           data: results,
@@ -43,13 +41,12 @@ export default class HomeScreen extends Component {
       <>
         <StatusBar barStyle="dark-content" />
         <SafeAreaView>
-          <TopBar></TopBar>
           <FlatList
             data={this.state.data.result}
             renderItem={({item}) => (
               <Post post={item} displayPost={this._displayPost} />
             )}
-            keyExtractor={item => item.id}
+            keyExtractor={item => item._id}
           />
         </SafeAreaView>
       </>

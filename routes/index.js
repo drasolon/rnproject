@@ -33,20 +33,14 @@ export const MainStack = createStackNavigator(
             style={{marginRight: 10}}
           />
         ),
+        gesturesEnabled: true,
       }),
     },
 
     PostDetails: {
       screen: PostDetails,
       navigationOptions: {
-        title: 'Post',
-      },
-    },
-
-    About: {
-      screen: AboutScreen,
-      navigationOptions: {
-        title: 'About the app',
+        title: 'Post Details',
       },
     },
 
@@ -60,6 +54,7 @@ export const MainStack = createStackNavigator(
   {
     initialRouteName: 'Home',
     headerMode: 'screen',
+    gesturesEnabled: true,
   },
 );
 
@@ -67,6 +62,9 @@ export const MainStack = createStackNavigator(
 export const Drawer = createDrawerNavigator({
   MainStack: {
     screen: MainStack,
+    navigationOptions: {
+      drawerLabel: 'Home',
+    },
   },
   About: {
     screen: AboutScreen,
@@ -82,8 +80,7 @@ export const AppStack = createStackNavigator(
     Drawer: {
       screen: Drawer,
       navigationOptions: {
-        header: null,
-        gesturesEnabled: false,
+        gesturesEnabled: true,
       },
     },
   },
