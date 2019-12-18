@@ -3,16 +3,16 @@ import {View, StyleSheet, Text} from 'react-native';
 
 import theme from '../styles/theme.style';
 
-export default class PostDetails extends Component {
+export default class UserAccount extends Component {
   render() {
     return (
-      <View style={styles.postDetails}>
-        <Text>Détail du Post {this.props.navigation.state.params.id}</Text>
+      <View style={styles.userAccount}>
+        <Text>User Account</Text>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  postDetails: {},
+  userAccount: {},
 });

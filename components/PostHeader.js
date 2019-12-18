@@ -1,18 +1,13 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 
-import {
-  View,
-  Text
-} from 'react-native';
+import {View, Text} from 'react-native';
 
 export default class PostHeader extends Component {
   render() {
-    return(
+    return (
       <View>
-        <Text>
-          Header
-        </Text>
+        <Text>{this.props.title}</Text>
       </View>
-      )
+    );
   }
 }
