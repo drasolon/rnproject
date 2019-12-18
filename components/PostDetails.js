@@ -5,9 +5,12 @@ import theme from '../styles/theme.style';
 
 export default class PostDetails extends Component {
   render() {
+    const {navigation} = this.props;
     return (
       <View style={styles.postDetails}>
-        <Text>Détail du Post {this.props.navigation.state.params.id}</Text>
+        <Text>
+          Détail du Post {JSON.stringify(navigation.getParam('id', 'NO-ID'))}
+        </Text>
       </View>
     );
   }

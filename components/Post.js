@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, TouchableOpacity} from 'react-native';
+import {StyleSheet, TouchableOpacity} from 'react-native';
 import PostContent from './PostContent';
 import PostFooter from './PostFooter';
 import PostHeader from './PostHeader';
@@ -11,10 +11,12 @@ export default class Post extends Component {
     return (
       <TouchableOpacity
         style={styles.post}
-        onPress={() => displayPost(post.id)}>
+        onPress={() => displayPost(post._id)}>
         <PostHeader title={post.title} />
         <PostContent content={post.content} />
-        <PostFooter></PostFooter>
+        <PostFooter
+          nbOfComments={post.nbComments}
+          date={post.dateTime}></PostFooter>
       </TouchableOpacity>
     );
   }
@@ -24,6 +26,7 @@ const styles = StyleSheet.create({
   post: {
     backgroundColor: theme.MAIN_COLOR,
     padding: 20,
+    paddingBottom: 5,
     borderBottomWidth: 1,
     borderBottomColor: theme.LIGHT_COLOR,
   },

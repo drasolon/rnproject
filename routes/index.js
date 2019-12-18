@@ -50,6 +50,13 @@ export const MainStack = createStackNavigator(
         title: 'User',
       },
     },
+
+    About: {
+      screen: AboutScreen,
+      navigationOptions: {
+        title: 'About the app',
+      },
+    },
   },
   {
     initialRouteName: 'Home',
