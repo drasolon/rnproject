@@ -59,20 +59,25 @@ export const MainStack = createStackNavigator(
 );
 
 // Drawer Navigator
-export const Drawer = createDrawerNavigator({
-  MainStack: {
-    screen: MainStack,
-    navigationOptions: {
-      drawerLabel: 'Home',
+export const Drawer = createDrawerNavigator(
+  {
+    MainStack: {
+      screen: MainStack,
+      navigationOptions: {
+        drawerLabel: 'Home',
+      },
+    },
+    About: {
+      screen: AboutScreen,
+      navigationOptions: {
+        title: 'About the app',
+      },
     },
   },
-  About: {
-    screen: AboutScreen,
-    navigationOptions: {
-      title: 'About the app',
-    },
+  {
+    gesturesEnabled: true,
   },
-});
+);
 
 // Main App Navigation
 export const AppStack = createStackNavigator(
