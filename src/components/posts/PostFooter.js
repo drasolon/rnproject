@@ -34,7 +34,7 @@ export default class PostFooter extends Component {
     return (
       <View style={styles.flex}>
         <Text style={styles.postFooter}>
-          {this.props.nbOfComments} Commentaires
+          {this.props.nbOfComments} {((this.props.nbOfComments === 0) || (this.props.nbOfComments === 1) ? "comment" : "comments" )}
         </Text>
         <Text style={styles.postFooter}>
           {this.timeSince(new Date(this.props.date))} ago
@@ -47,6 +47,7 @@ export default class PostFooter extends Component {
 const styles = StyleSheet.create({
   postFooter: {
     color: 'white',
+    fontSize: 11
   },
   flex: {
     display: 'flex',

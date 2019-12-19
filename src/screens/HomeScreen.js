@@ -6,7 +6,7 @@ import {
   View,
   FlatList,
 } from 'react-native';
-import Post from './Post';
+import Post from '../components/posts/Post';
 
 export default class HomeScreen extends Component {
   constructor(props) {
@@ -25,8 +25,8 @@ export default class HomeScreen extends Component {
       });
   }
 
-  _displayPost = id => {
-    this.props.navigation.navigate('PostDetails', {id: id});
+  _displayPost = post => {
+    this.props.navigation.navigate('PostDetails', {post: post});
   };
 
   render() {

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 
-import theme from '../styles/theme.style';
+import theme from '../../styles/theme.style';
 
 export default class PostDetails extends Component {
   render() {
@@ -9,7 +9,7 @@ export default class PostDetails extends Component {
     return (
       <View style={styles.postDetails}>
         <Text>
-          Détail du Post {JSON.stringify(navigation.getParam('id', 'NO-ID'))}
+          Détail du Post {JSON.stringify(navigation.getParam('post', 'NO-ID'))}
         </Text>
       </View>
     );

@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {StyleSheet, TouchableOpacity} from 'react-native';
-import PostContent from '../src/components/PostContent';
-import PostFooter from '../src/components/PostFooter';
-import PostHeader from '../src/components/PostHeader';
-import theme from '../styles/theme.style';
+import PostContent from './PostContent';
+import PostFooter from './PostFooter';
+import PostHeader from './PostHeader';
+import theme from '../../styles/theme.style';
 
 export default class Post extends Component {
   render() {

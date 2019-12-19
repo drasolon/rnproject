@@ -3,10 +3,10 @@ import {createStackNavigator} from 'react-navigation-stack';
 import {createDrawerNavigator} from 'react-navigation-drawer';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-import HomeScreen from '../components/HomeScreen';
-import UserAccount from '../components/UserAccount';
-import AboutScreen from '../components/AboutScreen';
-import PostDetails from '../components/PostDetails';
+import HomeScreen from '../screens/HomeScreen';
+import UserAccount from '../components/account/UserAccount';
+import AboutScreen from '../screens/AboutScreen';
+import PostDetails from '../components/posts/PostDetails';
 
 // Main Screens for Drawer Navigator
 export const MainStack = createStackNavigator(
