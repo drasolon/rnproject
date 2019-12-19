@@ -7,14 +7,19 @@ import {
   FlatList,
 } from 'react-native';
 import Post from '../components/posts/Post';
+import Users from '../lib/Users';
+import LoginScreen from './LoginScreen';
 
 export default class HomeScreen extends Component {
   constructor(props) {
     super(props);
-    this.state = {isLoading: true};
+    this.state = {isLoading: true, isLogged: false};
   }
 
   componentDidMount() {
+    let isLogged = Users.get(isLogged);
+    this.setState({isLogged: isLogged});
+
     return fetch('http://reddit.it.ws312.net:3000/posts?fromApp=1')
       .then(response => response.json())
       .then(results => {
@@ -30,6 +35,9 @@ export default class HomeScreen extends Component {
   };
 
   render() {
+    if (!this.state.isLogged) {
+      return <LoginScreen />;
+    }
     if (this.state.isLoading) {
       return (
         <View style={{flex: 1, padding: 20}}>
