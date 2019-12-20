@@ -7,7 +7,7 @@ import {
   FlatList,
 } from 'react-native';
 import Post from '../components/posts/Post';
-import Users from '../lib/Users';
+import Users from '../lib/User';
 import LoginScreen from './LoginScreen';
 
 export default class HomeScreen extends Component {

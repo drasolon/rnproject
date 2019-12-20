@@ -1,20 +1,48 @@
 import React, {Component} from 'react';
-import {View, StyleSheet, Text, TextInput} from 'react-native';
+import {View, StyleSheet, Text, TextInput, Button} from 'react-native';
+import {withNavigation} from 'react-navigation';
+import {User} from '../lib/User';
 
 import theme from '../styles/theme.style';
 
-export default class LoginScreen extends Component {
-  onChangeText = text => {
-    this.setState({login: text});
+class LoginScreen extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {loginInput: ''};
+  }
+  onChangeLoginInput = text => {
+    this.setState({loginInput: text});
   };
+  onChangePasswordInput = text => {
+    this.setState({passwordInput: text});
+  };
+
   render() {
+    console.log(User);
     return (
       <View style={styles.userAccount}>
-        <Text>Login Screen</Text>
+        <Text>Login</Text>
         <TextInput
-          style={{height: 40, borderColor: 'gray', borderWidth: 1}}
-          onChangeText={text => this.onChangeText(text)}
-          value="dd"
+          style={styles.textInput}
+          onChangeText={text => this.onChangeLoginInput(text)}
+          value={this.state.loginInput}
+        />
+        <Text>Password</Text>
+        <TextInput
+          style={styles.textInput}
+          onChangeText={text => this.onChangePasswordInput(text)}
+          value={this.state.passwordInput}
+          secureTextEntry={true}
+        />
+        <Button
+          title="Login"
+          onPress={() => {
+            {
+              /*             User.setState({isLogged: true});
+            this.props.navigation.navigate('Homescreen');
+ */
+            }
+          }}
         />
       </View>
     );
@@ -22,5 +50,7 @@ export default class LoginScreen extends Component {
 }
 
 const styles = StyleSheet.create({
-  userAccount: {},
+  textInput: {height: 40, borderColor: 'gray', borderWidth: 1},
 });
+
+export default withNavigation(LoginScreen);

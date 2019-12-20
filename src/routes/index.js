@@ -7,6 +7,7 @@ import HomeScreen from '../screens/HomeScreen';
 import UserAccount from '../components/account/UserAccount';
 import AboutScreen from '../screens/AboutScreen';
 import PostDetails from '../components/posts/PostDetails';
+import LoginScreen from '../screens/LoginScreen';
 
 // Main Screens for Drawer Navigator
 export const MainStack = createStackNavigator(
@@ -48,6 +49,13 @@ export const MainStack = createStackNavigator(
       screen: UserAccount,
       navigationOptions: {
         title: 'User',
+      },
+    },
+
+    LoginScreen: {
+      screen: LoginScreen,
+      navigationOptions: {
+        title: 'Login',
       },
     },
 
