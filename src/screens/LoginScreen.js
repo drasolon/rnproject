@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, StyleSheet, Text, TextInput, Button} from 'react-native';
 import {withNavigation} from 'react-navigation';
-import {User} from '../lib/User';
+import User from '../lib/User';
 
 import theme from '../styles/theme.style';
 
@@ -18,7 +18,6 @@ class LoginScreen extends Component {
   };
 
   render() {
-    console.log(User);
     return (
       <View style={styles.userAccount}>
         <Text>Login</Text>
@@ -38,9 +37,8 @@ class LoginScreen extends Component {
           title="Login"
           onPress={() => {
             {
-              /*             User.setState({isLogged: true});
-            this.props.navigation.navigate('Homescreen');
- */
+              User.setState({isLogged: true});
+              this.props.navigation.navigate('Homescreen');
             }
           }}
         />
